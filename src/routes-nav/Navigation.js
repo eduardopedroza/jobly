@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import UserContext from "../auth/UserContext";
-import "./Navigation.css";
 
 function Navigation({ logout }) {
   const { currentUser } = useContext(UserContext);
