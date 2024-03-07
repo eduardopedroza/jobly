@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import CompanyCard from "./CompanyCard";
 import JoblyApi from "../api/api";
 import SearchForm from "../common/SearchForm";
@@ -12,12 +11,8 @@ function CompanyList() {
   }, []);
 
   const search = async (name) => {
-    try {
-      let companies = await JoblyApi.getCompanies(name);
-      setCompanies(companies);
-    } catch (e) {
-      console.error("error fetching companies:", e);
-    }
+    let companies = await JoblyApi.getCompanies(name);
+    setCompanies(companies);
   };
 
   if (!companies) return <p>Loading...</p>;
